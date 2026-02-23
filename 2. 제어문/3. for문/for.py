@@ -79,9 +79,37 @@
 # print(result)
 
 # for문을 2개 이상 사용하는 경우
-result = [ x * y
-           for x in range(2, 10)
-           for y in range(1, 10)]
-print(result)
+# result = [ x * y
+#            for x in range(2, 10)
+#            for y in range(1, 10)]
+# print(result)
 
-## enumrate 함수 활용하기부터 시작
+## enumrate 함수 활용하기, 리스트의 인덱스와 값을 함께 구하고 싶을 때 사용
+# fruits = ['apple', 'banana', 'orange']
+# for i, fruits in enumerate(fruits):
+#     print(f"{i}: {fruits}")
+#    # 0: apple
+#    # 1: banana
+#   # 2: orange
+
+# fruits = ['apple', 'banana', 'orange']
+# for i, fruits in enumerate(fruits, 1): # 인덱스 1부터 시작
+#     print(f"{i}: {fruits}")
+#     # 1: apple
+#     # 2: banana
+#     # 3: orange
+
+# zip 함수로 여러 리스트 함께 순회하기
+# 두 개 이상의 리스트를 동시에 순회하고 싶을 때는 zip 함수를 사용한다
+# names = ['홍길동', '김순이', '김철수']
+# scores = [84, 92, 78]
+# for name, score in zip(names, scores):
+#     print(f"{name}: {score}점")
+
+# 3개 이상의 리스트도 함께 순회할 수 있다.
+names = ['홍길동', '김순이', '김철수']
+korean = [83, 92, 78]
+english = [90, 88, 95]
+
+for name, korScore, engScore in zip(names, korean, english):
+    print(f"{name}: 국어: {korScore}점, 영어: {engScore}점")
